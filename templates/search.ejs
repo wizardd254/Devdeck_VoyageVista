@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SEARCH</title>
+  <link rel="stylesheet" href="/styles.css" />
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+
+<body>
+  <nav class="main-nav">
+    <div class="logo">
+      <img src="/logo1.png" alt="Loading.." />
+    </div>
+
+    <div class="menu-link">
+        <ul>
+          <li>
+            <a href="#">News</a>
+            <ul class="dropdown">
+              <li><a href="#">IPO's</a></li>
+              <li><a href="#">Stocks</a></li>
+              <li><a href="#">Mutual Funds</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#">Learn</a>
+            <ul class="dropdown">
+              <li><a href="#">Online Trading</a></li>
+              <li><a href="#">Share Market</a></li>
+              <li><a href="#">Intraday Trading</a></li>
+            </ul>
+          </li>
+          <li><a href="/watchlist">My Watchlist</a></li>
+        </ul>
+      </div>
+      <div class="menu-link2">
+        <ul>
+          <li><a href="#">Contact Us</a></li>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Sign In/Join Now</a></li>
+        </ul>
+      </div>
+    
+    
+  </nav>
+  <div>Hi</div>
+  <div class="form-section">
+  <form id="userPreferenceForm">
+    <label for="userPreference">Do you have anything in mind?</label>
+    <select id="userPreference" name="userPreference">
+      <option value="yes">Yes</option>
+      <option value="maybe">Maybe</option>
+      <option value="no">No</option>
+    </select>
+     <div id="additionalFields" style="display: none;">
+        <label for="city">City:</label>
+        <input type="text" id="city" name="city">
+
+        <label for="type">Type:</label>
+        <input type="text" id="type" name="type">
+
+        <label for="time">Time:</label>
+        <input type="text" id="time" name="time">
+        <button type="submit">Submit</button>
+     </div>
+     <div id="additionalFields1" style="display: none;">
+        <label for="state">State:</label>
+        <input type="text" id="state" name="state">
+
+        <label for="type">Type:</label>
+        <input type="text" id="type" name="type">
+
+        <label for="time">Time:</label>
+        <input type="text" id="time" name="time">
+        <button type="submit">Submit</button>
+     </div>
+        <div id="additionalFields2" style="display: none;">
+        <label for="zone">Zone:</label>
+        <input type="text" id="zone" name="zone">
+
+        <label for="type">Type:</label>
+        <input type="text" id="type" name="type">
+
+        <label for="time">Time:</label>
+        <input type="text" id="time" name="time">
+        <button type="submit">Submit</button>
+     </div>
+  </form>
+  </div>
+
+  
+
+<script>
+  const userPreferenceSelect = document.getElementById('userPreference');
+  const additionalFieldsContainer = document.getElementById('additionalFields');
+  const additionalFieldsContainer1 = document.getElementById('additionalFields1');
+  const additionalFieldsContainer2 = document.getElementById('additionalFields2');
+
+  userPreferenceSelect.addEventListener('change', function() {
+    const selectedValue = this.value;
+
+    if (selectedValue === 'yes') {
+      additionalFieldsContainer.style.display = 'block';
+      additionalFieldsContainer1.style.display = 'none';
+      additionalFieldsContainer2.style.display = 'none';
+    }
+    else if (selectedValue === 'maybe') {
+      additionalFieldsContainer1.style.display = 'block';
+      additionalFieldsContainer.style.display = 'none';
+      additionalFieldsContainer2.style.display = 'none';
+    }
+    else if (selectedValue === 'no') {
+      additionalFieldsContainer2.style.display = 'block';
+      additionalFieldsContainer.style.display = 'none';
+      additionalFieldsContainer1.style.display = 'none';
+    }else {
+     additionalFieldsContainer2.style.display = 'none';
+      additionalFieldsContainer.style.display = 'none';
+      additionalFieldsContainer1.style.display = 'none';
+    }
+
+
+    
+  });
+</script>
+
+
+  <footer>
+      <div class="footer-section">
+        <div class="logo">
+          <img src="/logo1.png" alt="Loading.." />
+          <p>2024 © Stonks - Financial Modeling Prep</p>
+        </div>
+      </div>
+      <div class="footer-section">
+        <h3>Useful Links</h3>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Services</a></li>
+          <li><a href="contactus.ejs">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Community</h3>
+        <ul>
+          <li><a href="#">Forums</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Events</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Partners</h3>
+        <ul>
+          <li><a href="#">Partner 1</a></li>
+          <li><a href="#">Partner 2</a></li>
+          <li><a href="#">Partner 3</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <p>
+          Financial Modeling Prep API provides real time stock price, company
+          financial statements, major index prices, stock historical data, forex
+          real time rate and cryptocurrencies. Financial Modeling Prep stock
+          price API is in real time, the company reports can be found in quarter
+          or annual format, and goes back 30 years in history.
+        </p>
+      </div>
+    </footer>
+
+
+  </div>
+
+  
+</body>
+
+</html>
