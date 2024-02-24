@@ -6,10 +6,34 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>SEARCH</title>
   <link rel="stylesheet" href="/styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+  <!-- Include Flatpickr CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+
+<!-- Include Flatpickr JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
+
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+  <!-- Include daterangepicker CSS -->
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css">
+
+<!-- Include jQuery (required by daterangepicker) -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<!-- Include daterangepicker JavaScript -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+
 </head>
 
 <body>
+  <div class="bg"></div>
+  <div class="bg bg2"></div>
+  <div class="bg bg3"></div>
   <nav class="main-nav">
     <div class="logo">
       <img src="/logo1.png" alt="Loading.." />
@@ -18,19 +42,29 @@
     <div class="menu-link">
         <ul>
           <li>
-            <a href="#">Destination</a>
+            <i class="fas fa-map-marker-alt"></i>
+            <a href="/destination">Destination</a>
           </li>
           <li>
+            <i class="fab fa-blogger"></i>
             <a href="#">Blog</a>
           </li>
-          <li><a href="/">My Plans</a></li>
+          <li>
+            <i class="fas fa-suitcase"></i>
+            <a href="/myplans">My Plans</a></li>
         </ul>
       </div>
       <div class="menu-link2">
         <ul>
-          <li><a href="#">Contact Us</a></li>
-          <li><a href="#">About Us</a></li>
-          <li><a href="/">Sign Out</a></li>
+          <li>
+            <i class="fas fa-address-book"></i>
+            <a href="#">Contact Us</a></li>
+          <li>
+            <i class="fas fa-fingerprint"></i>
+            <a href="#">About Us</a></li>
+          <li>
+            <i class="fas fa-user"></i>
+            <a href="/">Sign Out</a></li>
         </ul>
       </div>
     
@@ -45,23 +79,105 @@
     <label for="time">Time:</label>
     <input type="text" id="time" name="time">
 
+    <label for="timePeriod">Select Time Period:</label>
+    <input type="text" id="timePeriod" name="timePeriod">
+
     <label for="state">State:</label>
-    <input type="text" id="state" name="state">
+    <select id="state" name="state">
+    <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
+    <option value="Andhra Pradesh">Andhra Pradesh</option>
+    <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+    <option value="Assam">Assam</option>
+    <option value="Bihar">Bihar</option>
+    <option value="Chandigarh">Chandigarh</option>
+    <option value="Chhattisgarh">Chhattisgarh</option>
+    <option value="Dadra and Nagar Haveli">Dadra and Nagar Haveli</option>
+    <option value="Daman and Diu">Daman and Diu</option>
+    <option value="Delhi">Delhi</option>
+    <option value="Goa">Goa</option>
+    <option value="Gujarat">Gujarat</option>
+    <option value="Haryana">Haryana</option>
+    <option value="Himachal Pradesh">Himachal Pradesh</option>
+    <option value="Jammu and Kashmir">Jammu and Kashmir</option>
+    <option value="Jharkhand">Jharkhand</option>
+    <option value="Karnataka">Karnataka</option>
+    <option value="Kerala">Kerala</option>
+    <option value="Ladakh">Ladakh</option>
+    <option value="Lakshadweep">Lakshadweep</option>
+    <option value="Madhya Pradesh">Madhya Pradesh</option>
+    <option value="Maharashtra">Maharashtra</option>
+    <option value="Manipur">Manipur</option>
+    <option value="Meghalaya">Meghalaya</option>
+    <option value="Mizoram">Mizoram</option>
+    <option value="Nagaland">Nagaland</option>
+    <option value="Odisha">Odisha</option>
+    <option value="Puducherry">Puducherry</option>
+    <option value="Punjab">Punjab</option>
+    <option value="Rajasthan">Rajasthan</option>
+    <option value="Sikkim">Sikkim</option>
+    <option value="Tamil Nadu">Tamil Nadu</option>
+    <option value="Telangana">Telangana</option>
+    <option value="Tripura">Tripura</option>
+    <option value="Uttar Pradesh">Uttar Pradesh</option>
+    <option value="Uttarakhand">Uttarakhand</option>
+    <option value="West Bengal">West Bengal</option>
+</select>
+
 
     <label for="zone">Zone:</label>
-    <input type="text" id="zone" name="zone">
+    <!-- <input type="text" id="zone" name="zone"> -->
+    <select id="zone" name="zone">
+        <option value="north">North</option>
+        <option value="south">South</option>
+        <option value="east">East</option>
+        <option value="west">West</option>
+      </select>
 
-    <label for="significance">Significance:</label>
-    <input type="text" id="significance" name="significance">
+    <label for="significance">Significance</label>
+      <select id="significance" name="significance">
+        <!-- <option value="" disabled selected>Significance...</option> -->
+        <option value="apple">Apple</option>
+        <option value="banana">Banana</option>
+        <option value="orange">Orange</option>
+        <option value="grape">Grape</option>
+      </select>
+
 
     <button type="submit">Submit</button>
   </form>
 
   </div>
 
-  
-
 <script>
+
+    // Initialize Flatpickr
+    flatpickr("#time", {
+        enableTime: true,
+        noCalendar: true,
+        dateFormat: "H:i",
+        time_24hr: true // Use 24-hour time format
+    });
+
+    $(document).ready(function() {
+        // Initialize daterangepicker
+        $('#timePeriod').daterangepicker({
+            opens: 'left', // Opens the calendar to the left
+            autoApply: true, // Automatically applies the selection when user clicks on dates
+            showDropdowns: true, // Shows dropdowns for selecting months and years
+            minDate: '2022-01-01', // Minimum selectable date
+            maxDate: '2022-12-31', // Maximum selectable date
+            linkedCalendars: false, // Shows two months side by side
+            locale: {
+                format: 'YYYY-MM-DD', // Date format
+                separator: ' to ', // Separator between start and end dates
+                applyLabel: 'Apply', // Label for apply button
+                cancelLabel: 'Cancel', // Label for cancel button
+                daysOfWeek: ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'], // Short names for days of week
+                monthNames: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'], // Full names for months
+                firstDay: 0 // First day of the week (0 = Sunday, 1 = Monday, etc.)
+            }
+        });
+    });
 
   const userPreferenceForm = document.getElementById('userPreferenceForm');
 
