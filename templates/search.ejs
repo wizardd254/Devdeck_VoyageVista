@@ -18,121 +18,84 @@
     <div class="menu-link">
         <ul>
           <li>
-            <a href="#">News</a>
-            <ul class="dropdown">
-              <li><a href="#">IPO's</a></li>
-              <li><a href="#">Stocks</a></li>
-              <li><a href="#">Mutual Funds</a></li>
-            </ul>
+            <a href="#">Destination</a>
           </li>
           <li>
-            <a href="#">Learn</a>
-            <ul class="dropdown">
-              <li><a href="#">Online Trading</a></li>
-              <li><a href="#">Share Market</a></li>
-              <li><a href="#">Intraday Trading</a></li>
-            </ul>
+            <a href="#">Blog</a>
           </li>
-          <li><a href="/watchlist">My Watchlist</a></li>
+          <li><a href="/">My Plans</a></li>
         </ul>
       </div>
       <div class="menu-link2">
         <ul>
           <li><a href="#">Contact Us</a></li>
           <li><a href="#">About Us</a></li>
-          <li><a href="#">Sign In/Join Now</a></li>
+          <li><a href="/">Sign Out</a></li>
         </ul>
       </div>
     
     
   </nav>
-  <div>Hello</div>
-  <div class="form-section">
-  <form id="userPreferenceForm">
-    <label for="userPreference">Do you have anything in mind?</label>
-    <select id="userPreference" name="userPreference">
-      <option value="yes">Yes</option>
-      <option value="maybe">Maybe</option>
-      <option value="no">No</option>
-    </select>
-     <div id="additionalFields" style="display: none;">
-        <label for="city">City:</label>
-        <input type="text" id="city" name="city">
+<div class="form-section">
+ <form id="userPreferenceForm">
 
-        <label for="type">Type:</label>
-        <input type="text" id="type" name="type">
+    <label for="type">Type:</label>
+    <input type="text" id="type" name="type">
 
-        <label for="time">Time:</label>
-        <input type="text" id="time" name="time">
-        <button type="submit">Submit</button>
-     </div>
-     <div id="additionalFields1" style="display: none;">
-        <label for="state">State:</label>
-        <input type="text" id="state" name="state">
+    <label for="time">Time:</label>
+    <input type="text" id="time" name="time">
 
-        <label for="type">Type:</label>
-        <input type="text" id="type" name="type">
+    <label for="state">State:</label>
+    <input type="text" id="state" name="state">
 
-        <label for="time">Time:</label>
-        <input type="text" id="time" name="time">
-        <button type="submit">Submit</button>
-     </div>
-        <div id="additionalFields2" style="display: none;">
-        <label for="zone">Zone:</label>
-        <input type="text" id="zone" name="zone">
+    <label for="zone">Zone:</label>
+    <input type="text" id="zone" name="zone">
 
-        <label for="type">Type:</label>
-        <input type="text" id="type" name="type">
+    <label for="significance">Significance:</label>
+    <input type="text" id="significance" name="significance">
 
-        <label for="time">Time:</label>
-        <input type="text" id="time" name="time">
-        <button type="submit">Submit</button>
-     </div>
+    <button type="submit">Submit</button>
   </form>
+
   </div>
 
   
 
 <script>
-  const userPreferenceSelect = document.getElementById('userPreference');
-  const additionalFieldsContainer = document.getElementById('additionalFields');
-  const additionalFieldsContainer1 = document.getElementById('additionalFields1');
-  const additionalFieldsContainer2 = document.getElementById('additionalFields2');
 
-  userPreferenceSelect.addEventListener('change', function() {
-    const selectedValue = this.value;
+  const userPreferenceForm = document.getElementById('userPreferenceForm');
 
-    if (selectedValue === 'yes') {
-      additionalFieldsContainer.style.display = 'block';
-      additionalFieldsContainer1.style.display = 'none';
-      additionalFieldsContainer2.style.display = 'none';
-    }
-    else if (selectedValue === 'maybe') {
-      additionalFieldsContainer1.style.display = 'block';
-      additionalFieldsContainer.style.display = 'none';
-      additionalFieldsContainer2.style.display = 'none';
-    }
-    else if (selectedValue === 'no') {
-      additionalFieldsContainer2.style.display = 'block';
-      additionalFieldsContainer.style.display = 'none';
-      additionalFieldsContainer1.style.display = 'none';
-    }else {
-     additionalFieldsContainer2.style.display = 'none';
-      additionalFieldsContainer.style.display = 'none';
-      additionalFieldsContainer1.style.display = 'none';
-    }
+  userPreferenceForm.addEventListener('submit', function(event) {
+    // Prevent the default form submission
+    event.preventDefault();
+    const formData = {}; 
+      formData.type = document.getElementById('type').value;
+      formData.time = document.getElementById('time').value;
+     formData.state = document.getElementById('state').value;
+     formData.zone = document.getElementById('zone').value;
+     formData.significance = document.getElementById('significance').value;
 
+    console.log(formData);
 
-    
+    axios.post('http://127.0.0.1:5000/', formData)
+      .then(response => {
+        // Access the response data
+        const responseData = response.data
+        console.log(responseData);
+      })
+      .catch(error => {
+        console.error('Error submitting form:', error);
+      });
   });
 </script>
+
 
 
   <footer>
       <div class="footer-section">
         <div class="logo">
           <img src="/logo1.png" alt="Loading.." />
-          <p>2024 © Stonks - Financial Modeling Prep</p>
+          <p>2024 © VoyageVista - Travel Recommendation</p>
         </div>
       </div>
       <div class="footer-section">
@@ -162,11 +125,7 @@
       </div>
       <div class="footer-section">
         <p>
-          Financial Modeling Prep API provides real time stock price, company
-          financial statements, major index prices, stock historical data, forex
-          real time rate and cryptocurrencies. Financial Modeling Prep stock
-          price API is in real time, the company reports can be found in quarter
-          or annual format, and goes back 30 years in history.
+         "VoyageVista is a travel recommendation platform that leverages machine learning to analyze user preferences and historical data, providing personalized travel plans based on budget, location, and duration. Seamlessly integrating sentiment analysis and natural language processing, VoyageVista ensures an enhanced travel experience by curating dynamic suggestions and engaging users in interactive conversations."
         </p>
       </div>
     </footer>
