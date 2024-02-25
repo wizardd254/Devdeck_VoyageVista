@@ -7,6 +7,7 @@ body {
   background-color: white;
   box-sizing: border-box;
   min-height: 100vh;
+  position: relative;
 }
 body::-webkit-scrollbar {
   width: 0.25rem;
@@ -91,7 +92,7 @@ header {
 /* NAVBAR STYLING */
 
 .main-nav {
-  width: 100%;
+  width: 99%;
   margin: 5px;
   height: 5rem;
   display: flex;
@@ -127,9 +128,9 @@ header {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  margin-left: 100px;
+  margin-left: 140px;
   margin-right: 10px;
-  margin-top: -16px;
+  margin-top: -16px
 }
 
 .menu-link ul li {
@@ -145,7 +146,7 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-left: 250px;
+  margin-left: 150px;
   margin-top: -16px;
 }
 
@@ -563,47 +564,180 @@ button[type='submit']:hover {
   filter: brightness(1) grayscale(0);
   transition: 0.3s ease-in-out;
 }
-.first {
-  grid-column: 1/2;
-}
-.second {
-  grid-column: 2/4;
-}
-.third {
-  grid-column: 4/5;
-}
+
 .container {
   display: flex;
-  height: 200px; /* Adjust height as per your requirement */
-  border: 2px solid #ccc;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  flex-direction: column;
+  border: 1px solid black;
 }
 
-.part {
-  flex: 1;
-  padding: 20px;
+.item{
+  display: flex;
+  flex-direction: row;
+  margin:10px;
+  padding:10px;
+  background-color: #000c22;
+  border-radius:10px;
 }
 
-.part-1 {
-  border-right: 2px solid #ccc;
+.first,
+.second,
+.third {
+  border: 1px solid black;
+  color: white;
 }
 
-.part-2 {
-  border-right: 2px solid #ccc;
+.first {
+  flex: 2;
 }
 
-.part img {
-  max-width: 100%;
-  height: auto;
+.second {
+  flex: 4;
 }
 
-.part p {
-  margin: 0;
+.third {
+  flex: 2;
 }
 
-.part-3 {
+.first p {
+  flex: 2;
+  color: white;
+}
+
+.second p {
+  flex: 4;
+  color: white;
+}
+
+.third p {
+  flex: 2;
+  color: white;
+}
+
+.container img {
+  border: 2px black;
+  height: 20px;
+}
+
+.chat-container {
+  border: 5px solid black;
+  height: 450px;
+  width: 450px;
+  margin: 10px;
+  padding: 2px;
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  background-color: white;
+}
+
+.chat-box {
+  border: 5px solid black;
+  height: 300px;
+  width: 410px;
+  margin: 8px;
+  padding: 10px;
+  overflow-y: auto;
+}
+
+
+.input-bar {
+  position: absolute;
+  /* Set the position of the input bar to absolute */
+  bottom: 5px;
+  left: 21px;
+  /* Align the input bar to the bottom of the chat container */
+  width: 100%;
+
+}
+
+.heading {
+  display: flex;
+  align-items: center;
+  margin-left: 128px;
+  /* Center align child elements vertically */
+}
+
+.heading h4 {
+  margin-right: 10px;
+  /* Add margin between h4 and i */
+}
+
+.heading i {
+  margin-left: 130px;
+  color: black;
+  background-color: white;
+  /* Set the color of the i element to white */
+}
+
+#user-input {
+  width: 374px;
+}
+
+
+
+.chatbot {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.chatbot i{
+  color: #000c22;
+  background-color: white;
+}
+
+.chat-container{
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    border-radius: 20px;
+}
+
+.input-bar i{
+  background-color: #000c22;
+  color: white;
+}
+
+.question{
+  display: flex;
+  flex-direction: row;
+  margin: 5px;
+}
+.user-message{
+  background-color: grey;
+  flex:10;
+  border-radius: 5px;
+  margin: 2px;
+  max-width: 370px;
+  overflow-wrap: break-word;
+}
+.question i{
+  flex:1;
+  background-color: #000c22;
+  color: white;
+}
+.response{
+  display: flex;
+  flex-direction: row;
+  margin: 5px;
+}
+.bot-message {
+  background-color: grey;
+  flex:10;
+  border-radius: 5px;
+  margin: 2px;
+  max-width: 370px;
+}
+.response i{
+    flex: 1;
+    background-color: #000c22;
+    color: white;
 }

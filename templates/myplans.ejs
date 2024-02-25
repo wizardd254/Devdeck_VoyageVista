@@ -9,6 +9,8 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
     />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
   </head>
 
   <body>
@@ -19,16 +21,15 @@
       <div class="logo">
         <img src="/logo1.png" alt="Loading.." />
       </div>
-
       <div class="menu-link">
         <ul>
           <li>
             <i class="fas fa-map-marker-alt"></i>
-            <a href="/destination">Destination</a>
+            <a href="#">Destination</a>
           </li>
           <li>
             <i class="fab fa-blogger"></i>
-            <a href="#">Blog</a>
+            <a href="/blog">Blog</a>
           </li>
           <li>
             <i class="fas fa-suitcase"></i>
@@ -40,11 +41,11 @@
         <ul>
           <li>
             <i class="fas fa-address-book"></i>
-            <a href="#">Contact Us</a>
+            <a href="/contactus">Contact Us</a>
           </li>
           <li>
             <i class="fas fa-fingerprint"></i>
-            <a href="#">About Us</a>
+            <a href="/aboutus">About Us</a>
           </li>
           <li>
             <i class="fas fa-user"></i>
@@ -53,56 +54,54 @@
         </ul>
       </div>
     </nav>
-    <div class="container">
-      <div class="part part-1">
+    
+<div class="main-section">
+  
+
+
+   <% descriptionList.forEach(function(place) { %>
+    <div class="item"> 
+      <div class="first">
         <!-- Image and rating content here -->
         <img src="your_image.jpg" alt="Image" />
-        <p>Rating: 4.5/5</p>
+        <p class="rating">Rating: 4.5/5</p>
       </div>
-      <div class="part part-2">
+      <div class="second">
         <!-- Text info content here -->
-        <h2>City Name</h2>
-        <p>State: State Name Significance: Significance Info</p>
+        <h2><%= place.Name%></h2>
+        <p>City:<%= city%> <br>
+         Significance: <%= place.Description%>
+        </p>
       </div>
-      <div class="part part-3">
+      <div class="third">
         <!-- Weather info content here -->
         <h3>Weather Info</h3>
         <p>Temperature: XX°C Weather Condition: Sunny/Cloudy/Rainy</p>
       </div>
-    </div>
+     </div>
+    <% }); %>
 
-    <!-- <div class="container">
-      <div class="box">
-        1
-        <div class="first"><img src="img1.jpg" alt="" /></div>
-        <div class="second"></div>
-        <div class="third"></div>
-      </div>
-      <div class="box">
-        2
-        <div class="first"><img src="img1.jpg" alt="" /></div>
-        <div class="second"></div>
-        <div class="third"></div>
-      </div>
-      <div class="box">
-        3
-        <div class="first"><img src="img1.jpg" alt="" /></div>
-        <div class="second"></div>
-        <div class="third"></div>
-      </div>
-      <div class="box">
-        4
-        <div class="first"><img src="img1.jpg" alt="" /></div>
-        <div class="second"></div>
-        <div class="third"></div>
-      </div>
-      <div class="box">
-        5
-        <div class="first"><img src="img1.jpg" alt="" /></div>
-        <div class="second"></div>
-        <div class="third"></div>
-      </div>
-    </div> -->
+
+
+    <div class="chatbot" id="chatbot">
+    <h5>Try our chatbot</h5>  
+    <i class="fas fa-comment" id="open-chat"></i>
+    </div>  
+  
+ <div class="chat-container" id="chat-container">
+  <div class="heading">
+    <h4>Ask our assistant:</h4>
+    <i class="fas fa-times fa-square" id="close-chat"></i>
+  </div>
+  <div class="chat-box" id="chat-box">
+    <!-- Chat messages will be displayed here -->
+  </div>
+  <div class="input-bar">
+    <input type="text" id="user-input" placeholder="Type your message here...">
+    <i class="fa-solid fa-paper-plane" onclick="sendMessage()"></i>
+  </div>
+ </div>
+</div>
     <footer>
       <div class="footer-section">
         <div class="logo">
@@ -148,5 +147,56 @@
         </p>
       </div>
     </footer>
+<script>
+      const placelistString="<%= placelist%>";
+      const placelist=placelistString.split(',');
+      console.log(placelist)
+
+ function sendMessage() {
+  const userInput = document.getElementById('user-input');
+  const userMessage = userInput.value;
+  const chatBox = document.getElementById('chat-box');
+
+  // Display user message in the chat box
+  chatBox.innerHTML += `<div class="question"><div class="user-message">${userMessage}</div><i class="fa-solid fa-user"></i></div>`;
+
+ axios.post('http://127.0.0.1:5000/query', { 
+      message: userMessage,
+      placelist: placelist
+    })
+      .then(response => {
+        // Display bot response in the chat box
+        const botResponse = response.data.answerofcb;
+        chatBox.innerHTML += `<div class="response"><i class="fa-solid fa-robot"></i><div class="bot-message">${botResponse}</div></div>`;
+      })
+      .catch(error => {
+        console.error('Error sending message:', error);
+      });
+
+    // Reset input field value to its placeholder value
+    userInput.value = '';
+  }
+  const chatContainer = document.getElementById('chat-container');
+  chatContainer.style.display = 'none';
+
+document.addEventListener("DOMContentLoaded", function() {
+  const openChatIcon = document.getElementById('open-chat');
+  const closeChatIcon = document.getElementById('close-chat');
+  
+  const chatbot = document.getElementById('chatbot');
+
+  openChatIcon.addEventListener('click', function() {
+    chatContainer.style.display = 'block';
+    chatbot.style.display = 'none';
+  });
+
+  closeChatIcon.addEventListener('click', function() {
+    chatContainer.style.display = 'none';
+    chatbot.style.display = 'block';
+  });
+ });
+
+
+    </script>
   </body>
 </html>
