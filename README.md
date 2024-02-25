@@ -32,7 +32,7 @@ By Team DevDecks <br><br>
 
 - [Team Members](#👨‍💻team-members)
 
-- [Screenshots]()
+- [Screenshots](#screenshots)
 
 </details>
 
@@ -40,11 +40,11 @@ By Team DevDecks <br><br>
 
 ## 📝Description
 
-The project aims to develop an AI-driven Travel Suggestion application that utilizes machine learning techniques to analyze user preferences and historical data. The application generates personalized travel suggestions for users by factoring in various parameters like location, time of travel, budget, airport prom=ximity, etc. It employs scikit-learn for machine learning functionalities, pandas for data manipulation, and numpy for numerical operations.
-
+The project aims to develop an AI-driven Travel Suggestion application for India that utilizes machine learning techniques to analyze user preferences and historical data. The application generates personalized travel suggestions for users by factoring in various parameters like which part of India , State, type of place , the best time to visit and activity. It employs scikit-learn for machine learning functionalities, pandas for data manipulation, and numpy for numerical operations. 
   
 
-Additionally, the application integrates natural language processing (NLP) to comprehend user queries effectively using a chatbot. Furthermore, the project encompasses web development aspects to provide users with an interactive and user-friendly interface for accessing and utilizing the application's functionalities.
+Additionally, the application integrates natural language processing (NLP) to comprehend user queries effectively using a chatbot. Furthermore, the project encompasses web development aspects to provide users with an interactive and user-friendly interface for accessing and utilizing the application's functionalities.This application is for tourism specifically in India 
+
 
   
 
@@ -52,9 +52,9 @@ Additionally, the application integrates natural language processing (NLP) to co
 
 - [GitHub Repository](https://github.com/wizardd254/Devdeck_VoyageVista)
 
-- [Demo Video]()
+- [Demo Video](https://drive.google.com/file/d/1ILK8IZmVHxZEo4NTFp0z6KFnK3r0OYnb/view?usp=drive_link)
 
-- [ScreenShots] ()
+- [ScreenShots](https://drive.google.com/drive/folders/1JYgwgIoYznBcU_YChj2b9V_RROnQS5TC)
 
   
 
@@ -64,7 +64,7 @@ Additionally, the application integrates natural language processing (NLP) to co
 
 #### Front-end -
 
-- HTML
+- EJS
 
 - CSS
 
@@ -74,11 +74,9 @@ Additionally, the application integrates natural language processing (NLP) to co
 
 #### Back-end -
 
-  
+- Flask
 
 - Node.js
-
-- Flask
 
 - Express
 
@@ -92,13 +90,12 @@ Additionally, the application integrates natural language processing (NLP) to co
 
 #### AI/ML -
 
-- NumPy
+- Transformers
 
 - Sklearn
 
-- NTLK
-
 - Python
+
 
   
 
@@ -114,7 +111,7 @@ Additionally, the application integrates natural language processing (NLP) to co
 
 - KNN based model for predicting the nest suited city for the user.
 
-- A chatbot to answer all the questions you have about the city.
+- A chatbot using NLP to refine given data based on user prompts and given preferences , and give the most suitable place to the user using their response.
 
 - A sleek UI to display photos, reviews, ratings and weather of all the locations selected.
 
@@ -135,15 +132,16 @@ Additionally, the application integrates natural language processing (NLP) to co
   
 
 - Increase the accuracy of the predictions provided
-
+- Give the User the ability to train underlying machine learning model to predict places based on users previous selections  
 - Build the ability to fetch prices and give the user a tentative budget for thr trip
+- Knn classifier can be trained on larger datasets for reccomending places from an International sample space and not just of India
 
   
 
 ## 💸Applications
 
 > This project is made to ease out the planning phase of any trip you want. From a solo ordeal, to a family pilgrimage.
-
+> Personalised recommendations can be used to create an entire list of destinations within user proximity.
   
 
 ## 🛠Project Setup
@@ -155,6 +153,9 @@ Additionally, the application integrates natural language processing (NLP) to co
 > After that download the libraries mentioned in the tech stack for AI/Ml to ensure that the model runs
 
 > Then you can just clone the repository.
+
+> Make sure to run both files travelflask.py and index.js simultaneously to establish proper connection between the frontend server and Models
+
 
   
 
@@ -181,3 +182,6 @@ Additionally, the application integrates natural language processing (NLP) to co
   
 
 ## 📱Screenshots
+- [Login Page](https://drive.google.com/file/d/1kGGFXQiDqVzZxyKYQPLt1fWeL7fnRZ9v/view)
+- [Chat Bot](https://drive.google.com/file/d/18PIovzVG5BFiO5WBzzEHotGF2XKoKcsc/view)
+- [Suggestion](https://drive.google.com/file/d/1f0jFsbVNQLjMjknaukxpmHkIg111HfOO/view)
