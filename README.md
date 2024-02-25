@@ -52,7 +52,7 @@ Additionally, the application integrates natural language processing (NLP) to co
 
 - [GitHub Repository](https://github.com/wizardd254/Devdeck_VoyageVista)
 
-- [Demo Video](https://drive.google.com/file/d/1ILK8IZmVHxZEo4NTFp0z6KFnK3r0OYnb/view?usp=drive_link)
+- [Demo Video](https://youtu.be/hL2Q8OP99ck)
 
 - [ScreenShots](https://drive.google.com/drive/folders/1JYgwgIoYznBcU_YChj2b9V_RROnQS5TC)
 
