@@ -78,8 +78,6 @@ Additionally, the application integrates natural language processing (NLP) to co
 
 - Node.js
 
-- Flask
-
 - Express
 
   
