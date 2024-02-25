@@ -9,6 +9,7 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
     />
+    <link rel="stylesheet" href="path/to/font-awesome/css/all.min.css">
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
   </head>
@@ -25,7 +26,7 @@
         <ul>
           <li>
             <i class="fas fa-map-marker-alt"></i>
-            <a href="#">Destination</a>
+            <a href="/destination">Destination</a>
           </li>
           <li>
             <i class="fab fa-blogger"></i>
@@ -33,7 +34,7 @@
           </li>
           <li>
             <i class="fas fa-suitcase"></i>
-            <a href="/myplans">My Plans</a>
+            <a href="/search/<%= id%>">Search</a>
           </li>
         </ul>
       </div>
@@ -57,14 +58,20 @@
     
 <div class="main-section">
   
+  <% if (descriptionList.length === 0) { %>
+  <div class="no-results">
+    <h2>No places found matching your description.</h2>
+    <p>Please refine your search criteria.</p>
+  </div>
+  <% }  %>
 
 
    <% descriptionList.forEach(function(place) { %>
     <div class="item"> 
       <div class="first">
         <!-- Image and rating content here -->
-        <img src="your_image.jpg" alt="Image" />
-        <p class="rating">Rating: 4.5/5</p>
+        <img src=<%= place.Images[0]%> alt="Image" />
+        <p class="rating">Rating: <%= place.Rating%></p>
       </div>
       <div class="second">
         <!-- Text info content here -->
@@ -73,11 +80,11 @@
          Significance: <%= place.Description%>
         </p>
       </div>
-      <div class="third">
-        <!-- Weather info content here -->
+     <div class="third" id="weather-info-<%= place.Name %>">
+    <!-- Weather info content here -->
         <h3>Weather Info</h3>
-        <p>Temperature: XX°C Weather Condition: Sunny/Cloudy/Rainy</p>
-      </div>
+        <p>Loading...</p>
+     </div>
      </div>
     <% }); %>
 
@@ -94,11 +101,12 @@
     <i class="fas fa-times fa-square" id="close-chat"></i>
   </div>
   <div class="chat-box" id="chat-box">
-    <!-- Chat messages will be displayed here -->
+    <div class="response"><i class="fas fa-robot"></i><div class="bot-message">'Hi! I am your travel assistant. Let me know which place do you want to go to. For example: "I want to have Thai Food" or "Which places have less crowd?"';
+   </div></div>
   </div>
   <div class="input-bar">
     <input type="text" id="user-input" placeholder="Type your message here...">
-    <i class="fa-solid fa-paper-plane" onclick="sendMessage()"></i>
+        <i class="fa fa-search" onclick="sendMessage()"></i>
   </div>
  </div>
 </div>
@@ -158,7 +166,7 @@
   const chatBox = document.getElementById('chat-box');
 
   // Display user message in the chat box
-  chatBox.innerHTML += `<div class="question"><div class="user-message">${userMessage}</div><i class="fa-solid fa-user"></i></div>`;
+  chatBox.innerHTML += `<div class="question"><div class="user-message">${userMessage}</div><i class="fa fa-user"></i></div>`;
 
  axios.post('http://127.0.0.1:5000/query', { 
       message: userMessage,
@@ -167,7 +175,7 @@
       .then(response => {
         // Display bot response in the chat box
         const botResponse = response.data.answerofcb;
-        chatBox.innerHTML += `<div class="response"><i class="fa-solid fa-robot"></i><div class="bot-message">${botResponse}</div></div>`;
+        chatBox.innerHTML += `<div class="response"><i class="fas fa-robot"></i><div class="bot-message"> You can vist: ${botResponse}</div></div>`;
       })
       .catch(error => {
         console.error('Error sending message:', error);
@@ -192,9 +200,31 @@ document.addEventListener("DOMContentLoaded", function() {
 
   closeChatIcon.addEventListener('click', function() {
     chatContainer.style.display = 'none';
-    chatbot.style.display = 'block';
+    chatbot.style.display = 'flex';
   });
  });
+
+
+  <% descriptionList.forEach(function(place) { %>
+   fetchWeather("<%= city %>", "<%= place.Name %>");
+  <% }); %>
+
+async function fetchWeather(city, placeName) {
+  try {
+    // Send a POST request to the Flask backend to fetch weather information
+    const response = await axios.post('http://127.0.0.1:5000//weather', { city: city });
+    const weatherInfo = response.data;
+    console.log(weatherInfo)
+    // Update the weather info in the DOM
+    const weatherDiv = document.getElementById('weather-info-' + placeName);
+    weatherDiv.innerHTML = `
+      <h3>Weather Info</h3>
+      <p>Temperature: ${weatherInfo.Temperature} Weather Condition: ${weatherInfo.Description}</p>
+    `;
+  } catch (error) {
+    console.error('Error fetching weather:', error);
+  }
+}
 
 
     </script>

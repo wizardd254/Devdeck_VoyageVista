@@ -38,7 +38,7 @@
         <ul>
           <li>
             <i class="fas fa-map-marker-alt"></i>
-            <a href="#">Destination</a>
+            <a href="/destination">Destination</a>
           </li>
           <li>
             <i class="fab fa-blogger"></i>
@@ -293,6 +293,10 @@
 
     <button type="submit">Submit</button>
   </form>
+  <div id="loading-container">
+    <div class="loader"></div>
+    <p>Loading...</p>
+  </div>
 
   </div>
 
@@ -301,10 +305,13 @@
 
   const userPreferenceForm = document.getElementById('userPreferenceForm');
   const userId="<%= id %>"
-
+  const loadingContainer = document.getElementById('loading-container');
+  loadingContainer.style.display='none';
   userPreferenceForm.addEventListener('submit', function(event) {
     // Prevent the default form submission
     event.preventDefault();
+
+    loadingContainer.style.display = 'flex';
     const formData = {}; 
       formData.type = document.getElementById('type').value;
       formData.time = document.getElementById('time').value;
@@ -316,17 +323,21 @@
 
       const submitForm = async () => {
         try {
+
+
           const response = await axios.post('http://127.0.0.1:5000/',{formData:formData});
           const responseData = response.data;
           const city = responseData.city;
           const placelist = responseData.placelist;
           const description_list=responseData.description_list;
+          const weather=responseData.weather;
           
 
           // Serialize description_list to JSON and encode it
           const descriptionListString = JSON.stringify(description_list);
+          const weatherString=JSON.stringify(weather);
           
-          const queryString = `?city=${city}&placelist=${placelist.join(',')}&description_list=${descriptionListString}`;
+          const queryString = `?city=${city}&placelist=${placelist.join(',')}&description_list=${descriptionListString}&weather=${weatherString}`;
 
           const newURL = `/plans/${userId}` + queryString;
           window.location.href = newURL;

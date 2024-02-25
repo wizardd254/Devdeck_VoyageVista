@@ -103,13 +103,6 @@ app.get("/plans/:id", (req, res) => {
     const  descriptionList=JSON.parse(descriptionListParam);
 
     console.log(placelist)
-    // if (descriptionListParam) {
-    //     descriptionList = JSON.parse(descriptionListParam);
-    // }
-    // console.log(typeof(descriptionListParam))
-
-    // console.log(city);
-    // console.log(placelist);
     console.log(descriptionList);
 
     res.render("myplans", { id: id, city: city, placelist: placelist, descriptionList: descriptionList });
