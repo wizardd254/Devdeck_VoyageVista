@@ -5,6 +5,7 @@ const ejs = require("ejs");
 const templatepath= path.join(__dirname,'./templates')
 const collection = require("./src/mongodb");
 const mongoose = require('mongoose');
+const { Console } = require("console");
 const { ObjectId } = mongoose.Types;
 
 app.use(express.json());
@@ -66,10 +67,54 @@ app.get("/login", (req, res) => {
 app.get("/signup", (req, res) => {
     res.render("signup");
 });
+app.get("/blog", (req, res) => {
+    res.render("blog");
+});
+app.get("/aboutus", (req, res) => {
+    res.render("aboutus");
+});
+
+app.get("/contactus", (req, res) => {
+    res.render("contactus");
+});
+
+app.get("/destination", (req, res) => {
+    res.render("destination");
+});
 
 app.get("/search/:id",(req,res)=>{
-    res.render("search");
+    const id=req.params.id;
+    res.render("search",{id:id});
 })
+
+app.get("/plans/:id", (req, res) => {
+    const id = req.params.id;
+    const city = req.query.city;
+    const placelistParam = req.query.placelist; // Retrieve placelist from query parameters
+    const descriptionListParam = req.query.description_list;
+    console.log("hello");
+    console.log(typeof(descriptionListParam))
+    console.log(descriptionListParam)
+    let placelist = [];
+
+    if (placelistParam) {
+        placelist = placelistParam.split(','); // Split placelist into an array
+    }
+    const  descriptionList=JSON.parse(descriptionListParam);
+
+    console.log(placelist)
+    // if (descriptionListParam) {
+    //     descriptionList = JSON.parse(descriptionListParam);
+    // }
+    // console.log(typeof(descriptionListParam))
+
+    // console.log(city);
+    // console.log(placelist);
+    console.log(descriptionList);
+
+    res.render("myplans", { id: id, city: city, placelist: placelist, descriptionList: descriptionList });
+});
+
 
 
 app.listen(8080,()=>{

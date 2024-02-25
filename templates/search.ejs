@@ -6,133 +6,348 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>SEARCH</title>
   <link rel="stylesheet" href="/styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+  <!-- Include Flatpickr CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+<!-- Include Flatpickr JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
+
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+  <!-- Include daterangepicker CSS -->
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css">
+
+<!-- Include jQuery (required by daterangepicker) -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<!-- Include daterangepicker JavaScript -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+
 </head>
 
 <body>
+  <div class="bg"></div>
+  <div class="bg bg2"></div>
+  <div class="bg bg3"></div>
   <nav class="main-nav">
-    <div class="logo">
-      <img src="/logo1.png" alt="Loading.." />
-    </div>
-
-    <div class="menu-link">
+      <div class="logo">
+        <img src="/logo1.png" alt="Loading.." />
+      </div>
+      <div class="menu-link">
         <ul>
           <li>
-            <a href="#">News</a>
-            <ul class="dropdown">
-              <li><a href="#">IPO's</a></li>
-              <li><a href="#">Stocks</a></li>
-              <li><a href="#">Mutual Funds</a></li>
-            </ul>
+            <i class="fas fa-map-marker-alt"></i>
+            <a href="#">Destination</a>
           </li>
           <li>
-            <a href="#">Learn</a>
-            <ul class="dropdown">
-              <li><a href="#">Online Trading</a></li>
-              <li><a href="#">Share Market</a></li>
-              <li><a href="#">Intraday Trading</a></li>
-            </ul>
+            <i class="fab fa-blogger"></i>
+            <a href="/blog">Blog</a>
           </li>
-          <li><a href="/watchlist">My Watchlist</a></li>
+          <li>
+            <i class="fas fa-suitcase"></i>
+            <a href="/myplans">My Plans</a>
+          </li>
         </ul>
       </div>
       <div class="menu-link2">
         <ul>
-          <li><a href="#">Contact Us</a></li>
-          <li><a href="#">About Us</a></li>
-          <li><a href="#">Sign In/Join Now</a></li>
+          <li>
+            <i class="fas fa-address-book"></i>
+            <a href="/contactus">Contact Us</a>
+          </li>
+          <li>
+            <i class="fas fa-fingerprint"></i>
+            <a href="/aboutus">About Us</a>
+          </li>
+          <li>
+            <i class="fas fa-user"></i>
+            <a href="/">Sign Out</a>
+          </li>
         </ul>
       </div>
-    
-    
-  </nav>
-  <div>Hi</div>
-  <div class="form-section">
-  <form id="userPreferenceForm">
-    <label for="userPreference">Do you have anything in mind?</label>
-    <select id="userPreference" name="userPreference">
-      <option value="yes">Yes</option>
-      <option value="maybe">Maybe</option>
-      <option value="no">No</option>
+    </nav>
+<div class="form-section">
+ <form id="userPreferenceForm">
+
+    <label for="type">Type:</label>
+    <select id="type"  name="type">
+      <option value="">Select Type</option>    
+      <option value="War Memorial">War Memorial</option>
+      <option value="Tomb">Tomb</option>
+      <option value="Temple">Temple</option>
+      <option value="Theme Park">Theme Park</option>
+      <option value="Observatory">Observatory</option>
+      <option value="Market">Market</option>
+      <option value="Fort">Fort</option>
+      <option value="Stepwell">Stepwell</option>
+      <option value="Park">Park</option>
+      <option value="Museum">Museum</option>
+      <option value="Zoo">Zoo</option>
+      <option value="Monument">Monument</option>
+      <option value="Science">Science</option>
+      <option value="Promenade">Promenade</option>
+      <option value="National Park">National Park</option>
+      <option value="Religious Shrine">Religious Shrine</option>
+      <option value="Beach">Beach</option>
+      <option value="Amusement Park">Amusement Park</option>
+      <option value="Palace">Palace</option>
+      <option value="Botanical Garden">Botanical Garden</option>
+      <option value="Government Building">Government Building</option>
+      <option value="Landmark">Landmark</option>
+      <option value="Lake">Lake</option>
+      <option value="Film Studio">Film Studio</option>
+      <option value="Tombs">Tombs</option>
+      <option value="Church">Church</option>
+      <option value="Waterfall">Waterfall</option>
+      <option value="Bird Sanctuary">Bird Sanctuary</option>
+      <option value="Historical">Historical</option>
+      <option value="Site">Site</option>
+      <option value="Cultural">Cultural</option>
+      <option value="Urban Development Project">Urban Development Project</option>
+      <option value="Mountain Peak">Mountain Peak</option>
+      <option value="Cave">Cave</option>
+      <option value="Valley">Valley</option>
+      <option value="Temples">Temples</option>
+      <option value="Border Crossing">Border Crossing</option>
+      <option value="Sculpture Garden">Sculpture Garden</option>
+      <option value="Scenic Area">Scenic Area</option>
+      <option value="Viewpoint">Viewpoint</option>
+      <option value="Adventure Sport">Adventure Sport</option>
+      <option value="Trekking">Trekking</option>
+      <option value="Gurudwara">Gurudwara</option>
+      <option value="Suspension Bridge">Suspension Bridge</option>
+      <option value="Site">Site</option>
+      <option value="Prehistoric Site">Prehistoric Site</option>
+      <option value="Scenic Point">Scenic Point</option>
+      <option value="Monastery">Monastery</option>
+      <option value="Tea Plantation">Tea Plantation</option>
+      <option value="Adventure Sport">Adventure Sport</option>
+      <option value="Gurudwara">Gurudwara</option>
+      <option value="Suspension Bridge">Suspension Bridge</option>
+      <option value="Site">Site</option>
+      <option value="Prehistoric Site">Prehistoric Site</option>
+      <option value="Scenic Point">Scenic Point</option>
+      <option value="Monastery">Monastery</option>
+      <option value="Tea Plantation">Tea Plantation</option>
+      <option value="Cultural">Cultural</option>
+      <option value="Sports">Sports</option>
+      <option value="Architectural">Architectural</option>
+      <option value="Show">Show</option>
+      <option value="Event">Event</option>
+      <option value="Cultural Tour">Cultural Tour</option>
+      <option value="Extension">Extension</option>
+      <option value="Rock Carvings">Rock Carvings</option>
+      <option value="Township">Township</option>
+      <option value="Natural Feature">Natural Feature</option>
+      <option value="Commercial Complex">Commercial Complex</option>
+      <option value="Mall">Mall</option>
+      <option value="Library">Library</option>
+      <option value="Educational">Educational</option>
+      <option value="Exhibition Center">Exhibition Center</option>
+      <option value="Auditorium">Auditorium</option>
+      <option value="Convention Center">Convention Center</option>
+      <option value="Institute">Institute</option>
+      <option value="Market">Market</option>
+      <option value="Heritage Walk">Heritage Walk</option>
+      <option value="Eco Park">Eco Park</option>
+      <option value="Night Market">Night Market</option>
+      <option value="Landmark">Landmark</option>
+      <option value="Viewpoint">Viewpoint</option>
+      <option value="Hotel">Hotel</option>
+      <option value="Cinema">Cinema</option>
+      <option value="Archives">Archives</option>
+      <option value="Art Gallery">Art Gallery</option>
+      <option value="Crafts Village">Crafts Village</option>
+      <option value="Bird Sanctuary">Bird Sanctuary</option>
+      <option value="Military">Military</option>
+      <option value="Film Festival">Film Festival</option>
+      <option value="City Area">City Area</option>
+      <option value="Religious Organization">Religious Organization</option>
+      <option value="Port">Port</option>
+      <option value="Heritage House">Heritage House</option>
+      <option value="Financial">Financial</option>
+      <option value="Ghat">Ghat</option>
+      <option value="Food Court">Food Court</option>
+      <option value="Design Institute">Design Institute</option>
+      <option value="Conservation Area">Conservation Area</option>
+      <option value="Polo Club">Polo Club</option>
+      <option value="Medical">Medical</option>
+      <option value="Astronomical Observatory">Astronomical Observatory</option>
+      <option value="Laser Tag Arena">Laser Tag Arena</option>
+      <option value="University">University</option>
+      <option value="Jewelry Museum">Jewelry Museum</option>
+      <option value="Lighthouse">Lighthouse</option>
+      <option value="Basilica">Basilica</option>
+      <option value="Heritage House">Heritage House</option>
+      <option value="Cultural Center">Cultural Center</option>
+      <option value="Cinema and Cultural Complex">Cinema and Cultural Complex</option>
+      <option value="Science Centre">Science Centre</option>
+      <option value="Crafts Village">Crafts Village</option>
+      <option value="Military Museum">Military Museum</option>
+      <option value="Water Palace">Water Palace</option>
+      <option value="National Shrine">National Shrine</option>
+      <option value="Cricket Ground">Cricket Ground</option>
+      <option value="Bird Sanctuary">Bird Sanctuary</option>
+      <option value="Natural Springs">Natural Springs</option>
+  </select>
+
+
+    <label for="time">Time:</label>
+    <select id="time" name="time">
+        <option value="">Select Time</option>
+        <option value="All">All</option>
+        <option value="Morning">Morning</option>
+        <option value="Afternoon">Afternoon</option>
+        <option value="Evening">Evening</option>
     </select>
-     <div id="additionalFields" style="display: none;">
-        <label for="city">City:</label>
-        <input type="text" id="city" name="city">
 
-        <label for="type">Type:</label>
-        <input type="text" id="type" name="type">
+    <label for="timePeriod">Select Time Period:</label>
+    <input type="text" id="timePeriod" name="timePeriod">
 
-        <label for="time">Time:</label>
-        <input type="text" id="time" name="time">
-        <button type="submit">Submit</button>
-     </div>
-     <div id="additionalFields1" style="display: none;">
-        <label for="state">State:</label>
-        <input type="text" id="state" name="state">
+    <label for="state">State:</label>
+    <select id="state" name="state">
+    <option value="">Select State</option>  
+    <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
+    <option value="Andhra Pradesh">Andhra Pradesh</option>
+    <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+    <option value="Assam">Assam</option>
+    <option value="Bihar">Bihar</option>
+    <option value="Chandigarh">Chandigarh</option>
+    <option value="Chhattisgarh">Chhattisgarh</option>
+    <option value="Dadra and Nagar Haveli">Dadra and Nagar Haveli</option>
+    <option value="Daman and Diu">Daman and Diu</option>
+    <option value="Delhi">Delhi</option>
+    <option value="Goa">Goa</option>
+    <option value="Gujarat">Gujarat</option>
+    <option value="Haryana">Haryana</option>
+    <option value="Himachal Pradesh">Himachal Pradesh</option>
+    <option value="Jammu and Kashmir">Jammu and Kashmir</option>
+    <option value="Jharkhand">Jharkhand</option>
+    <option value="Karnataka">Karnataka</option>
+    <option value="Kerala">Kerala</option>
+    <option value="Ladakh">Ladakh</option>
+    <option value="Lakshadweep">Lakshadweep</option>
+    <option value="Madhya Pradesh">Madhya Pradesh</option>
+    <option value="Maharashtra">Maharashtra</option>
+    <option value="Manipur">Manipur</option>
+    <option value="Meghalaya">Meghalaya</option>
+    <option value="Mizoram">Mizoram</option>
+    <option value="Nagaland">Nagaland</option>
+    <option value="Odisha">Odisha</option>
+    <option value="Puducherry">Puducherry</option>
+    <option value="Punjab">Punjab</option>
+    <option value="Rajasthan">Rajasthan</option>
+    <option value="Sikkim">Sikkim</option>
+    <option value="Tamil Nadu">Tamil Nadu</option>
+    <option value="Telangana">Telangana</option>
+    <option value="Tripura">Tripura</option>
+    <option value="Uttar Pradesh">Uttar Pradesh</option>
+    <option value="Uttarakhand">Uttarakhand</option>
+    <option value="West Bengal">West Bengal</option>
+</select>
 
-        <label for="type">Type:</label>
-        <input type="text" id="type" name="type">
 
-        <label for="time">Time:</label>
-        <input type="text" id="time" name="time">
-        <button type="submit">Submit</button>
-     </div>
-        <div id="additionalFields2" style="display: none;">
-        <label for="zone">Zone:</label>
-        <input type="text" id="zone" name="zone">
+    <label for="zone">Zone:</label>
+    <!-- <input type="text" id="zone" name="zone"> -->
+    <select id="zone" name="zone">
+        <option value="">Select Zone</option>
+        <option value="Northern">Northern</option>
+        <option value="Southern">Southern</option>
+        <option value="Eastern">Eastern</option>
+        <option value="Western">Western</option>
+      </select>
 
-        <label for="type">Type:</label>
-        <input type="text" id="type" name="type">
+    <label for="significance">Significance</label>
+      <select id="significance" name="significance">
+        <option value="">Select Significance</option>
+        <option value="Historical">Historical</option>
+        <option value="Religious">Religious</option>
+        <option value="Environmental">Environmental</option>
+        <option value="Scientific">Scientific</option>
+        <option value="Market">Market</option>
+        <option value="Botanical">Botanical</option>
+        <option value="Artistic">Artistic</option>
+        <option value="Scenic">Scenic</option>
+        <option value="Wildlife">Wildlife</option>
+        <option value="Recreational">Recreational</option>
+        <option value="Nature">Nature</option>
+        <option value="Architectural">Architectural</option>
+        <option value="Cultural">Cultural</option>
+        <option value="Sports">Sports</option>
+        <option value="Educational">Educational</option>
+        <option value="Adventure">Adventure</option>
+        <option value="Ancient">Ancient</option>
+        <option value="Colonial">Colonial</option>
+        <option value="Art">Art</option>
+        <option value="Judicial">Judicial</option>
+        <option value="Performing Arts">Performing Arts</option>
+        <option value="Islamic">Islamic</option>
+        <option value="Memorial">Memorial</option>
+        <option value="Humanitarian">Humanitarian</option>
+        <option value="Luxury">Luxury</option>
+        <option value="Conservation">Conservation</option>
+        <option value="Marine">Marine</option>
+      </select>
 
-        <label for="time">Time:</label>
-        <input type="text" id="time" name="time">
-        <button type="submit">Submit</button>
-     </div>
+
+    <button type="submit">Submit</button>
   </form>
+
   </div>
 
-  
-
 <script>
-  const userPreferenceSelect = document.getElementById('userPreference');
-  const additionalFieldsContainer = document.getElementById('additionalFields');
-  const additionalFieldsContainer1 = document.getElementById('additionalFields1');
-  const additionalFieldsContainer2 = document.getElementById('additionalFields2');
-
-  userPreferenceSelect.addEventListener('change', function() {
-    const selectedValue = this.value;
-
-    if (selectedValue === 'yes') {
-      additionalFieldsContainer.style.display = 'block';
-      additionalFieldsContainer1.style.display = 'none';
-      additionalFieldsContainer2.style.display = 'none';
-    }
-    else if (selectedValue === 'maybe') {
-      additionalFieldsContainer1.style.display = 'block';
-      additionalFieldsContainer.style.display = 'none';
-      additionalFieldsContainer2.style.display = 'none';
-    }
-    else if (selectedValue === 'no') {
-      additionalFieldsContainer2.style.display = 'block';
-      additionalFieldsContainer.style.display = 'none';
-      additionalFieldsContainer1.style.display = 'none';
-    }else {
-     additionalFieldsContainer2.style.display = 'none';
-      additionalFieldsContainer.style.display = 'none';
-      additionalFieldsContainer1.style.display = 'none';
-    }
 
 
-    
+  const userPreferenceForm = document.getElementById('userPreferenceForm');
+  const userId="<%= id %>"
+
+  userPreferenceForm.addEventListener('submit', function(event) {
+    // Prevent the default form submission
+    event.preventDefault();
+    const formData = {}; 
+      formData.type = document.getElementById('type').value;
+      formData.time = document.getElementById('time').value;
+     formData.state = document.getElementById('state').value;
+     formData.zone = document.getElementById('zone').value;
+     formData.significance = document.getElementById('significance').value;
+
+    console.log(formData);
+
+      const submitForm = async () => {
+        try {
+          const response = await axios.post('http://127.0.0.1:5000/',{formData:formData});
+          const responseData = response.data;
+          const city = responseData.city;
+          const placelist = responseData.placelist;
+          const description_list=responseData.description_list;
+          
+
+          // Serialize description_list to JSON and encode it
+          const descriptionListString = JSON.stringify(description_list);
+          
+          const queryString = `?city=${city}&placelist=${placelist.join(',')}&description_list=${descriptionListString}`;
+
+          const newURL = `/plans/${userId}` + queryString;
+          window.location.href = newURL;
+        } catch (error) {
+          console.error('Error submitting form:', error);
+        }
+      };
+
+      submitForm();
+
+
   });
 </script>
+
 
 
   <footer>
       <div class="footer-section">
         <div class="logo">
           <img src="/logo1.png" alt="Loading.." />
-          <p>2024 © Stonks - Financial Modeling Prep</p>
+          <p>2024 © VoyageVista - Travel Recommendation</p>
         </div>
       </div>
       <div class="footer-section">
@@ -162,11 +377,7 @@
       </div>
       <div class="footer-section">
         <p>
-          Financial Modeling Prep API provides real time stock price, company
-          financial statements, major index prices, stock historical data, forex
-          real time rate and cryptocurrencies. Financial Modeling Prep stock
-          price API is in real time, the company reports can be found in quarter
-          or annual format, and goes back 30 years in history.
+         "VoyageVista is a travel recommendation platform that leverages machine learning to analyze user preferences and historical data, providing personalized travel plans based on budget, location, and duration. Seamlessly integrating sentiment analysis and natural language processing, VoyageVista ensures an enhanced travel experience by curating dynamic suggestions and engaging users in interactive conversations."
         </p>
       </div>
     </footer>
