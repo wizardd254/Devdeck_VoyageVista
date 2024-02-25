@@ -1,22 +1,39 @@
 # VoyageVista : A Smart Travel Planner
 
 
-## Brief Description
+## 📝Brief Description
 The project aims to develop an AI-driven Travel Suggestion application that utilizes machine learning techniques to analyze user preferences and historical data. The application generates personalized travel suggestions for users by factoring in various parameters like location, time of travel, budget, airport prom=ximity, etc. It employs scikit-learn for machine learning functionalities, pandas for data manipulation, and numpy for numerical operations.
 
 Additionally, the application integrates natural language processing (NLP) to comprehend user queries effectively using a chatbot. Furthermore, the project encompasses web development aspects to provide users with an interactive and user-friendly interface for accessing and utilizing the application's functionalities.
 
-## Technologies Used
-- NumPy
-- Sklearn
-- NTLK
-- HMTL
+## 🔗Links
+- [GitHub Repository](https://github.com/wizardd254/Devdeck_VoyageVista)
+- [Demo Video]()
+- [ScreenShots] ()
+
+## 🤖Tech Stack
+
+#### Front-end -
+- HTML
 - CSS
 - JavaScript
+
+#### Back-end -
+
 - Node.js
 - Flask
 - Express
+
+#### Database -
 - MongoDB
+
+#### AI/ML -
+- NumPy
+- Sklearn
+- NTLK
+- Python
+
+## 📈Progress
 
 ## Machine Learning
 The aim of the project is to develop a sophisticated travel recommendation system that utilizes advanced technologies to assist users in planning their trips more effectively and efficiently. 
@@ -41,7 +58,7 @@ Using Natural Language Processing (NLP) for queries in a chatbot involves proces
 
 1. **Text Preprocessing**
 2. **Entity Extraction**
-3. **Sentiment Analysis** and 
+3. **Sentiment Analysis** 
 4. **Response Generation**
 
 Using NLP in chatbots enables them to understand and respond to user queries more effectively, providing more natural and engaging conversational experiences. NLP techniques play a crucial role in enhancing the usability and functionality of chatbots across various domains and applications
@@ -56,23 +73,25 @@ Using NLP in chatbots enables them to understand and respond to user queries mor
 
 In summary, web development aspects of a functional website which takes prompts from a user regarding their preferences and chatbot involves building both frontend and backend components, integrating with NLP services, enabling real-time communication, and ensuring seamless deployment and hosting for user accessibility. These aspects collectively contribute to creating an effective and user-friendly chatbot experience on the web.
 
-## Dependencies
-The website depends on the following:
-- HTML
-- CSS
-- Node.js
-- Flask
-- Express
-- MongoDB
+## 🛠Project Setup
 
-## Future Work
+> To setup the project, you must need an IDE, like VScode, which is capable of running the above dependencies.
+> After that download the libraries mentioned in the tech stack for AI/Ml to ensure that the model runs
+> Then you can just clone the repository.
 
-## Acknowledgments
-We would like to express our gratitude for the tools and platforms that contributed to the success of this project:
+## 💻Usage
 
-- Google Colab: Google Colab provided a collaborative environment for the development of the FMM and object detection components. Its cloud-based Jupyter notebooks facilitated data processing and model training.
+> To use the project, first run the travelflask.py file from the cloned repository. This will setup the ai models.
+> Next open a separate window and in that run the index.js file to actually use the project.
 
-## Contact
+## 👨‍💻Team Members
+
+## 🔮Future Work
+
+## 💸Applications
+> This project is made to ease out the planning phase of any trip you want. From a solo ordeal, to a family pilgrimage.
+
+## 🧑Team Members
 If you have any questions, need assistance, or wish to get in touch with us, please feel free to reach out to the authors:
 - Kindipsingh Mallhi
 - Priyansh Katariya
