@@ -26,7 +26,7 @@
         <ul>
           <li>
             <i class="fas fa-map-marker-alt"></i>
-            <a href="#">Destination</a>
+            <a href="/destination">Destination</a>
           </li>
           <li>
             <i class="fab fa-blogger"></i>
@@ -204,12 +204,11 @@ document.addEventListener("DOMContentLoaded", function() {
   });
  });
 
- // Iterate through each place in the descriptionList and fetch weather information
+
   <% descriptionList.forEach(function(place) { %>
    fetchWeather("<%= city %>", "<%= place.Name %>");
   <% }); %>
 
-// Function to fetch weather information for a specific city and update the DOM
 async function fetchWeather(city, placeName) {
   try {
     // Send a POST request to the Flask backend to fetch weather information
