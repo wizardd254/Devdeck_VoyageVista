@@ -6,6 +6,7 @@
 <div align="center">
 <strong>A Smart Travel Planner</strong><br>
 By Team DevDecks <br><br>
+</div>
 <hr>
 <details>
 
