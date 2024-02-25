@@ -35,7 +35,7 @@ const data = {
 await collection.insertMany([data])
 
 console.log("added to database");
-res.redirect('/search');
+res.redirect('/');
 }
 catch(err){
     console.log(err.body);
@@ -64,9 +64,7 @@ app.post("/login",async (req,res)=>{
 app.get("/login", (req, res) => {
     res.render("login");
 });
-app.get("/signup", (req, res) => {
-    res.render("signup");
-});
+
 app.get("/blog", (req, res) => {
     res.render("blog");
 });

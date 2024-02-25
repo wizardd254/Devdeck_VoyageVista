@@ -49,6 +49,7 @@ img {
   z-index: 2000;
   position: relative;
   right:50px ;
+  top:20px;
 }
 
 form {
