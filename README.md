@@ -1,7 +1,7 @@
-<div align = "center">
+<h1 align = "center">
     <strong>VoyageVista</strong> - A Smart Travel Planner<br>
     By Team DevDecks <br><br>
-</div>
+</h1>
 <hr>
 
 <details>
@@ -16,8 +16,8 @@
 - [Setup](#🛠project-setup)
 - [Usage](#💻usage)
 - [Team Members](#👨‍💻team-members)
-- [Screenshots](#📱screenshots)
-
+- [Screenshots]()
+</details>
 
 ## 📝Description
 The project aims to develop an AI-driven Travel Suggestion application that utilizes machine learning techniques to analyze user preferences and historical data. The application generates personalized travel suggestions for users by factoring in various parameters like location, time of travel, budget, airport prom=ximity, etc. It employs scikit-learn for machine learning functionalities, pandas for data manipulation, and numpy for numerical operations.
