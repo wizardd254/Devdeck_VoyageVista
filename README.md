@@ -41,9 +41,9 @@ By Team DevDecks <br><br>
 ## 📝Description
 
 The project aims to develop an AI-driven Travel Suggestion application for India that utilizes machine learning techniques to analyze user preferences and historical data. The application generates personalized travel suggestions for users by factoring in various parameters like which part of India , State, type of place , the best time to visit and activity. It employs scikit-learn for machine learning functionalities, pandas for data manipulation, and numpy for numerical operations. 
-  
 
-Additionally, the application integrates natural language processing (NLP) to comprehend user queries effectively using a chatbot. Furthermore, the project encompasses web development aspects to provide users with an interactive and user-friendly interface for accessing and utilizing the application's functionalities.This application is for tourism specifically in India 
+
+Additionally, the application integrates natural language processing (NLP) to comprehend user queries effectively using a chatbot. Furthermore, the project encompasses web development aspects to provide users with an interactive and user-friendly interface for accessing and utilizing the application's functionalities.This application is for tourism specifically in India.
 
 
   
@@ -109,7 +109,7 @@ Additionally, the application integrates natural language processing (NLP) to co
 
 - User Authentication.
 
-- KNN based model for predicting the nest suited city for the user.
+- KNN based model for predicting the best suited city for the user.
 
 - A chatbot using NLP to refine given data based on user prompts and given preferences , and give the most suitable place to the user using their response.
 
@@ -121,7 +121,7 @@ Additionally, the application integrates natural language processing (NLP) to co
 
   
 
-- Sentiment Analysis for providing a summary for all the reviews for a location.
+- Sentiment Analysis for providing a summary for all the reviews of a location.
 
 - Recomended tours/holidays, based on the user's age, gender and travel preference(solo, family, group, etc)
 
@@ -131,16 +131,16 @@ Additionally, the application integrates natural language processing (NLP) to co
 
   
 
-- Increase the accuracy of the predictions provided
-- Give the User the ability to train underlying machine learning model to predict places based on users previous selections  
-- Build the ability to fetch prices and give the user a tentative budget for thr trip
-- Knn classifier can be trained on larger datasets for reccomending places from an International sample space and not just of India
+- Increase the accuracy of the predictions provided.
+- Give the User the ability to train underlying machine learning model to predict places based on users' previous selections. 
+- Build the ability to fetch prices and give the user a tentative budget for thr trip.
+- Knn classifier can be trained on larger datasets for reccomending places from an International sample space and not just of India.
 
   
 
 ## 💸Applications
 
-> This project is made to ease out the planning phase of any trip you want. From a solo ordeal, to a family pilgrimage.
+> This project is made to ease out the planning phase of any trip you want. From a solo soul searching trip, to a family pilgrimage.
 > Personalised recommendations can be used to create an entire list of destinations within user proximity.
   
 
