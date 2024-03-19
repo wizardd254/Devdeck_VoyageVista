@@ -1199,3 +1199,14 @@ p,
   margin-top: 10px;
   text-align: center;
 }
+
+#back,#back2 {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  align-items: center;
+  background-color: #000c22;
+  color: #fff;
+  cursor: pointer;
+  font-size: 16px;
+}

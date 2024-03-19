@@ -47,7 +47,7 @@ app.post("/login",async (req,res)=>{
     try {
         const check = await collection.findOne({name:req.body.name});
         if (check.password==req.body.password) {
-           res.redirect(`/search/${check._id}`);
+           res.redirect(`/search`);
         } else {
             console.log("wrongpassword");
             res.redirect('/login');
@@ -80,12 +80,13 @@ app.get("/destination", (req, res) => {
     res.render("destination");
 });
 
-app.get("/search/:id",(req,res)=>{
+app.get("/search",(req,res)=>{
     const id=req.params.id;
     res.render("search",{id:id});
 })
 
-app.get("/plans/:id", (req, res) => {
+app.get("/plans", (req, res) => {
+
     const id = req.params.id;
     const city = req.query.city;
     const placelistParam = req.query.placelist; // Retrieve placelist from query parameters
@@ -94,11 +95,18 @@ app.get("/plans/:id", (req, res) => {
     console.log(typeof(descriptionListParam))
     console.log(descriptionListParam)
     let placelist = [];
+    let descriptionList=[];
 
     if (placelistParam) {
         placelist = placelistParam.split(','); // Split placelist into an array
     }
-    const  descriptionList=JSON.parse(descriptionListParam);
+
+    try{
+     descriptionList=JSON.parse(descriptionListParam);
+    }catch{
+     console.log(Error);
+
+    }
 
     console.log(placelist)
     console.log(descriptionList);
